@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main (void) 
+{ 
+  int Num[10]; 
+  int j, i, temp, prom=0; 
+  int val=10;
+
+  printf ("Introduce los numeros a ordenar:\n"); 
+  
+  for (i = 0; i < val; i++) 
+  
+  { 
+    printf("\n");
+    printf ("%d: ", i + 1); 
+    scanf ("%d", &Num[i]); 
+    printf ("\n"); 
+    prom=prom+Num[i];
+  printf ("\n"); 
+  }
+ 
+printf("El promedio es:  %.2f\n\n",prom/10);
+  for (i = 0; i < (val - 1); i++) 
+  { 
+    for (j = i + 1; j < val; j++) 
+    { 
+      if (Num[i] < Num[j]) 
+      { 
+        temp = Num[j]; 
+        Num[j] = Num[i]; 
+        Num[i] = temp; 
+      } 
+    } 
+  } 
+  
+  printf ("Los numeros ordenados son:\n"); 
+  for (i = 0; i < val; i++) 
+  { 
+    printf("%d ", Num[i]); 
+  } 
+  printf("\n\n\n"); 
+ 
+  return 0;  
+}
